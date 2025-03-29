@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domains\Market\Services;
 
-use App\Domains\Fuel\Contracts\FuelInterface;
+use App\Domains\Fuel\Contracts\StoveFuelInterface;
 use App\Domains\Market\Contracts\MarketFuelSourceInterface;
 use App\Domains\Market\Contracts\MarketInterface;
 use App\Domains\Market\ValueObjects\Money;
@@ -23,7 +23,7 @@ class MarketFuelProvider implements FuelProviderInterface
         $this->sources = $sources;
     }
 
-    public function getFuel(Money $money): ?FuelInterface
+    public function getFuel(Money $money): ?StoveFuelInterface
     {
         foreach ($this->sources as $source) {
             $fuel = $source->buy($this->market, $money);

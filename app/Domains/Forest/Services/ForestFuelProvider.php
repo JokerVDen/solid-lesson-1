@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Domains\Forest\Services;
 
 use App\Domains\Forest\Contracts\ForestInterface;
-use App\Domains\Fuel\Contracts\FuelInterface;
+use App\Domains\Fuel\Contracts\StoveFuelInterface;
 use App\Domains\Market\ValueObjects\Money;
 use App\Domains\Stove\Contracts\FuelProviderInterface;
 use App\Domains\Timeline\Contracts\TimelineInterface;
@@ -22,7 +22,7 @@ class ForestFuelProvider implements FuelProviderInterface
         $this->forest = $forest;
     }
 
-    public function getFuel(Money $money): ?FuelInterface
+    public function getFuel(Money $money): ?StoveFuelInterface
     {
         $this->timeline->goBackYears(30);
 

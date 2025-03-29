@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domains\Forest\Contracts;
 
-use App\Domains\Fuel\Contracts\FuelInterface;
+use App\Domains\Fuel\Contracts\StoveFuelInterface;
 
 interface ForestInterface
 {
@@ -12,5 +12,5 @@ interface ForestInterface
 
     public function plantOneTree(): void;
 
-    public function cutDownTree(string $treeType): FuelInterface;
+    public function cutDownTree(string $treeType): StoveFuelInterface;
 }

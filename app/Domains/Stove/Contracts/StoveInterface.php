@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domains\Stove\Contracts;
 
-use App\Domains\Fuel\Contracts\FuelInterface;
+use App\Domains\Fuel\Contracts\StoveFuelInterface;
 
 interface StoveInterface
 {
-    public function useStove(FuelInterface $fuel): void;
+    public function useStove(StoveFuelInterface $fuel): void;
 }
